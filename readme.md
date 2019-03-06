@@ -30,8 +30,8 @@ To compile and run the module, use:
 Creating isolated process...
 Cleaning build folders...
 Compiling module...
-Module DLL Loaded [C:\CodeTemp\AppConfiguration\AppConfiguration\bin\AppConfiguration.private.dll]
-Custom PSM1 Loaded [C:\CodeTemp\AppConfiguration\AppConfiguration\custom\AppConfiguration.custom.psm1]
+Module DLL Loaded [C:\..\AppConfiguration\bin\AppConfiguration.private.dll]
+Custom PSM1 Loaded [C:\..\AppConfiguration\custom\AppConfiguration.custom.psm1]
 -------------Done-------------
 Creating isolated process...
 Loaded Module 'Az.Accounts'
@@ -75,6 +75,7 @@ These are the settings for generating the cmdlets for an API with AutoRest.
 input-file: AppConfiguration.json
 namespace: Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration
 title: AppConfiguration
+module-name: Az.AppConfiguration
 powershell: true
 clear-output-folder: true
 output-folder: AppConfiguration

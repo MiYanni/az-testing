@@ -46,8 +46,8 @@
   # Warning: This region is code-generated and will get replaced upon regeneration.
 
   NestedModules = @(
-    "./bin/AppConfiguration.private.dll"
-    "AppConfiguration.psm1"
+    "./bin/Az.AppConfiguration.private.dll"
+    "Az.AppConfiguration.psm1"
   )
 
   RequiredModules = @(
@@ -55,7 +55,7 @@
   )
 
   FormatsToProcess = @(
-    "./AppConfiguration.format.ps1xml"
+    "./Az.AppConfiguration.format.ps1xml"
   )
 # endregion
 
