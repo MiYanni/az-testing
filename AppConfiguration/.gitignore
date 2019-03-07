@@ -2,4 +2,5 @@ bin
 obj
 generated
 exports
+!exports/readme.md
 test/*-TestResults.xml

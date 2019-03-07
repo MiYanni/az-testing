@@ -83,7 +83,9 @@ azure: true
 skip-model-cmdlets: true
 
 directive:
-- remove-operation: Operations_List
+  - remove-operation: Operations_List
+  - where-command: (.*)(AzConfiguration)(.*)
+    set-name: $1AzAppConfiguration$3
 ```
 
 # PowerShell

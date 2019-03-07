@@ -37,7 +37,8 @@ Write-Host -ForegroundColor Green 'Cleaning build folders...'
 $binFolder = (Join-Path $PSScriptRoot 'bin')
 $objFolder = (Join-Path $PSScriptRoot 'obj')
 $null = Remove-Item -Recurse -ErrorAction SilentlyContinue -Path $binFolder, $objFolder
-$null = Get-ChildItem -Path 'exports' -Recurse -Exclude 'readme.md' | Remove-Item -Recurse -ErrorAction SilentlyContinue
+$exportPath = Join-Path $PSScriptRoot 'exports'
+$null = Get-ChildItem -Path $exportPath -Recurse -Exclude 'readme.md' | Remove-Item -Recurse -ErrorAction SilentlyContinue
 
 if((Test-Path $binFolder) -or (Test-Path $objFolder)) {
   Write-Error 'Unable to clean ''bin'' or ''obj'' folder. A process may have an open handle.'
@@ -76,7 +77,6 @@ if(($commands | Measure-Object).Count -eq 0) {
 
 $commands = $commands | Where-Object { $_.Name -ne 'New-ProxyCmdlet' -and $_.Name -ne 'New-TestStub'}
 
-$exportPath = Join-Path $PSScriptRoot 'exports'
 $null = New-Item -ItemType Directory -Force -Path $exportPath
 New-ProxyCmdlet -CommandInfo $commands -OutputFolder $exportPath
 
