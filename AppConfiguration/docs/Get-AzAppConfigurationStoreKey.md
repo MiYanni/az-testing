@@ -14,27 +14,26 @@ Lists the access key for the specified configuration store.
 
 ### KeysResourceGroupNameConfigStoreName (Default)
 ```
-Get-AzAppConfigurationStoreKey -ConfigStoreName <String> [-DefaultProfile <PSObject>]
- -ResourceGroupName <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+Get-AzAppConfigurationStoreKey [-DefaultProfile <PSObject>] -Name <String> -ResourceGroupName <String>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### KeysSubscriptionIdResourceGroupNameConfigStoreNameSkipToken
 ```
-Get-AzAppConfigurationStoreKey -ConfigStoreName <String> [-DefaultProfile <PSObject>]
- -ResourceGroupName <String> -SkipToken <String> -SubscriptionId <String> [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Get-AzAppConfigurationStoreKey [-DefaultProfile <PSObject>] -Name <String> -ResourceGroupName <String>
+ -SkipToken <String> -SubscriptionId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### KeysResourceGroupNameConfigStoreNameSkipToken
 ```
-Get-AzAppConfigurationStoreKey -ConfigStoreName <String> [-DefaultProfile <PSObject>]
- -ResourceGroupName <String> -SkipToken <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+Get-AzAppConfigurationStoreKey [-DefaultProfile <PSObject>] -Name <String> -ResourceGroupName <String>
+ -SkipToken <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### KeysSubscriptionIdResourceGroupNameConfigStoreName
 ```
-Get-AzAppConfigurationStoreKey -ConfigStoreName <String> [-DefaultProfile <PSObject>]
- -ResourceGroupName <String> -SubscriptionId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+Get-AzAppConfigurationStoreKey [-DefaultProfile <PSObject>] -Name <String> -ResourceGroupName <String>
+ -SubscriptionId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,21 +50,6 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -ConfigStoreName
-The name of the configuration store.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
@@ -75,6 +59,21 @@ Parameter Sets: (All)
 Aliases: AzureRMContext, AzureCredential
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+The name of the configuration store.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

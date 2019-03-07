@@ -14,28 +14,14 @@ Regenerates an access key for the specified configuration store.
 
 ### KeyResourceGroupNameConfigStoreNameIdExpanded (Default)
 ```
-New-AzAppConfigurationStoreKey -ConfigStoreName <String> [-DefaultProfile <PSObject>]
- -ResourceGroupName <String> [-Id <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### KeySubscriptionIdResourceGroupNameConfigStoreNameId
-```
-New-AzAppConfigurationStoreKey -ConfigStoreName <String> [-DefaultProfile <PSObject>]
- -RegenerateKeyParameters <IRegenerateKeyParameters> -ResourceGroupName <String> -SubscriptionId <String>
- [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### KeyResourceGroupNameConfigStoreNameId
-```
-New-AzAppConfigurationStoreKey -ConfigStoreName <String> [-DefaultProfile <PSObject>]
- -RegenerateKeyParameters <IRegenerateKeyParameters> -ResourceGroupName <String> [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-AzAppConfigurationStoreKey [-DefaultProfile <PSObject>] [-Id <String>] -Name <String>
+ -ResourceGroupName <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### KeySubscriptionIdResourceGroupNameConfigStoreNameIdExpanded
 ```
-New-AzAppConfigurationStoreKey -ConfigStoreName <String> [-DefaultProfile <PSObject>]
- -ResourceGroupName <String> [-Id <String>] -SubscriptionId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzAppConfigurationStoreKey [-DefaultProfile <PSObject>] [-Id <String>] -Name <String>
+ -ResourceGroupName <String> -SubscriptionId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,21 +37,6 @@ PS C:\> {{ Add example code here }}
 {{ Add example description here }}
 
 ## PARAMETERS
-
-### -ConfigStoreName
-The name of the configuration store.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
@@ -87,7 +58,7 @@ The id of the key to regenerate.
 
 ```yaml
 Type: System.String
-Parameter Sets: KeyResourceGroupNameConfigStoreNameIdExpanded, KeySubscriptionIdResourceGroupNameConfigStoreNameIdExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -97,18 +68,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RegenerateKeyParameters
-The parameters used to regenerate an API key.
+### -Name
+The name of the configuration store.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Models.Api20190201Preview.IRegenerateKeyParameters
-Parameter Sets: KeySubscriptionIdResourceGroupNameConfigStoreNameId, KeyResourceGroupNameConfigStoreNameId
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -132,7 +103,7 @@ The Microsoft Azure subscription ID.
 
 ```yaml
 Type: System.String
-Parameter Sets: KeySubscriptionIdResourceGroupNameConfigStoreNameId, KeySubscriptionIdResourceGroupNameConfigStoreNameIdExpanded
+Parameter Sets: KeySubscriptionIdResourceGroupNameConfigStoreNameIdExpanded
 Aliases:
 
 Required: True

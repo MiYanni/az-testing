@@ -14,13 +14,13 @@ Deletes a configuration store.
 
 ### ResourceGroupNameConfigStoreNameEtc (Default)
 ```
-Remove-AzAppConfigurationStore [-AsJob] -ConfigStoreName <String> [-DefaultProfile <PSObject>] [-PassThru]
+Remove-AzAppConfigurationStore [-AsJob] [-DefaultProfile <PSObject>] -Name <String> [-PassThru]
  -ResourceGroupName <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SubscriptionIdResourceGroupNameConfigStoreNameEtc
 ```
-Remove-AzAppConfigurationStore [-AsJob] -ConfigStoreName <String> [-DefaultProfile <PSObject>] [-PassThru]
+Remove-AzAppConfigurationStore [-AsJob] [-DefaultProfile <PSObject>] -Name <String> [-PassThru]
  -ResourceGroupName <String> -SubscriptionId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -53,21 +53,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ConfigStoreName
-The name of the configuration store.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
@@ -77,6 +62,21 @@ Parameter Sets: (All)
 Aliases: AzureRMContext, AzureCredential
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+The name of the configuration store.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

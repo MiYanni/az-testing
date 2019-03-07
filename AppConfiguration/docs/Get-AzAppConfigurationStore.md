@@ -19,13 +19,13 @@ Get-AzAppConfigurationStore [-DefaultProfile <PSObject>] [<CommonParameters>]
 
 ### SubscriptionIdResourceGroupNameConfigStoreName
 ```
-Get-AzAppConfigurationStore [-DefaultProfile <PSObject>] -ConfigStoreName <String> -ResourceGroupName <String>
+Get-AzAppConfigurationStore [-DefaultProfile <PSObject>] -Name <String> -ResourceGroupName <String>
  -SubscriptionId <String> [<CommonParameters>]
 ```
 
 ### ResourceGroupNameConfigStoreName
 ```
-Get-AzAppConfigurationStore [-DefaultProfile <PSObject>] -ConfigStoreName <String> -ResourceGroupName <String>
+Get-AzAppConfigurationStore [-DefaultProfile <PSObject>] -Name <String> -ResourceGroupName <String>
  [<CommonParameters>]
 ```
 
@@ -82,21 +82,6 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -ConfigStoreName
-The name of the configuration store.
-
-```yaml
-Type: System.String
-Parameter Sets: SubscriptionIdResourceGroupNameConfigStoreName, ResourceGroupNameConfigStoreName
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
@@ -106,6 +91,21 @@ Parameter Sets: (All)
 Aliases: AzureRMContext, AzureCredential
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+The name of the configuration store.
+
+```yaml
+Type: System.String
+Parameter Sets: SubscriptionIdResourceGroupNameConfigStoreName, ResourceGroupNameConfigStoreName
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

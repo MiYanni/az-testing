@@ -29,6 +29,3 @@ Deletes a configuration store.
 ### [Test-AzAppConfigurationStoreNameAvailability](Test-AzAppConfigurationStoreNameAvailability.md)
 Checks whether the configuration store name is available for use.
 
-### [Update-AzAppConfigurationStore](Update-AzAppConfigurationStore.md)
-Updates a configuration store with the specified parameters.
-

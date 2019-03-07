@@ -18,20 +18,6 @@ Test-AzAppConfigurationStoreNameAvailability [-DefaultProfile <PSObject>] -Name 
  -Type <ConfigurationResourceType> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### NameAvailabilitySubscriptionIdNameType
-```
-Test-AzAppConfigurationStoreNameAvailability
- -CheckNameAvailabilityParameters <ICheckNameAvailabilityParameters> [-DefaultProfile <PSObject>]
- -SubscriptionId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### NameAvailabilityNameType
-```
-Test-AzAppConfigurationStoreNameAvailability
- -CheckNameAvailabilityParameters <ICheckNameAvailabilityParameters> [-DefaultProfile <PSObject>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
-```
-
 ### NameAvailabilitySubscriptionIdNameTypeExpanded
 ```
 Test-AzAppConfigurationStoreNameAvailability [-DefaultProfile <PSObject>] -Name <String>
@@ -51,21 +37,6 @@ PS C:\> {{ Add example code here }}
 {{ Add example description here }}
 
 ## PARAMETERS
-
-### -CheckNameAvailabilityParameters
-Parameters used for checking whether a resource name is available.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Models.Api20190201Preview.ICheckNameAvailabilityParameters
-Parameter Sets: NameAvailabilitySubscriptionIdNameType, NameAvailabilityNameType
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
@@ -87,7 +58,7 @@ The name to check for availability.
 
 ```yaml
 Type: System.String
-Parameter Sets: NameAvailabilityNameTypeExpanded, NameAvailabilitySubscriptionIdNameTypeExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -102,7 +73,7 @@ The Microsoft Azure subscription ID.
 
 ```yaml
 Type: System.String
-Parameter Sets: NameAvailabilitySubscriptionIdNameType, NameAvailabilitySubscriptionIdNameTypeExpanded
+Parameter Sets: NameAvailabilitySubscriptionIdNameTypeExpanded
 Aliases:
 
 Required: True
@@ -117,7 +88,7 @@ The resource type to check for name availability.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Support.ConfigurationResourceType
-Parameter Sets: NameAvailabilityNameTypeExpanded, NameAvailabilitySubscriptionIdNameTypeExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True

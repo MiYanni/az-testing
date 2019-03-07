@@ -14,29 +14,15 @@ Creates a configuration store with the specified parameters.
 
 ### ResourceGroupNameConfigStoreNameLocationTagsPropertiesExpanded (Default)
 ```
-New-AzAppConfigurationStore [-AsJob] -ConfigStoreName <String> [-DefaultProfile <PSObject>]
- -ResourceGroupName <String> -Location <String> [-Tag <Hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### SubscriptionIdResourceGroupNameConfigStoreNameLocationTagsProperties
-```
-New-AzAppConfigurationStore [-AsJob] -ConfigStoreCreationParameters <IConfigurationStore>
- -ConfigStoreName <String> [-DefaultProfile <PSObject>] -ResourceGroupName <String> -SubscriptionId <String>
- [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### ResourceGroupNameConfigStoreNameLocationTagsProperties
-```
-New-AzAppConfigurationStore [-AsJob] -ConfigStoreCreationParameters <IConfigurationStore>
- -ConfigStoreName <String> [-DefaultProfile <PSObject>] -ResourceGroupName <String> [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-AzAppConfigurationStore [-AsJob] [-DefaultProfile <PSObject>] -Location <String> -Name <String>
+ -ResourceGroupName <String> [-Tag <Hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SubscriptionIdResourceGroupNameConfigStoreNameLocationTagsPropertiesEtc
 ```
-New-AzAppConfigurationStore [-AsJob] -ConfigStoreName <String> [-DefaultProfile <PSObject>]
- -ResourceGroupName <String> -Location <String> [-Tag <Hashtable>] -SubscriptionId <String> [-WhatIf]
- [-Confirm] [<CommonParameters>]
+New-AzAppConfigurationStore [-AsJob] [-DefaultProfile <PSObject>] -Location <String> -Name <String>
+ -ResourceGroupName <String> [-Tag <Hashtable>] -SubscriptionId <String> [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -68,37 +54,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ConfigStoreCreationParameters
-The configuration store along with all resource properties.
-The Configuration Store will have all information to begin utlizing it.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Models.Api20190201Preview.IConfigurationStore
-Parameter Sets: SubscriptionIdResourceGroupNameConfigStoreNameLocationTagsProperties, ResourceGroupNameConfigStoreNameLocationTagsProperties
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ConfigStoreName
-The name of the configuration store.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
@@ -120,7 +75,22 @@ This cannot be changed after the resource is created.
 
 ```yaml
 Type: System.String
-Parameter Sets: ResourceGroupNameConfigStoreNameLocationTagsPropertiesExpanded, SubscriptionIdResourceGroupNameConfigStoreNameLocationTagsPropertiesEtc
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+The name of the configuration store.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -150,7 +120,7 @@ The Microsoft Azure subscription ID.
 
 ```yaml
 Type: System.String
-Parameter Sets: SubscriptionIdResourceGroupNameConfigStoreNameLocationTagsProperties, SubscriptionIdResourceGroupNameConfigStoreNameLocationTagsPropertiesEtc
+Parameter Sets: SubscriptionIdResourceGroupNameConfigStoreNameLocationTagsPropertiesEtc
 Aliases:
 
 Required: True
@@ -165,7 +135,7 @@ The tags of the resource.
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: ResourceGroupNameConfigStoreNameLocationTagsPropertiesExpanded, SubscriptionIdResourceGroupNameConfigStoreNameLocationTagsPropertiesEtc
+Parameter Sets: (All)
 Aliases:
 
 Required: False
