@@ -72,8 +72,7 @@ These are the settings for generating the cmdlets for an API with AutoRest.
 ``` yaml
 input-file: AppConfiguration.json
 namespace: Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration
-title: AppConfiguration
-module-name: Az.AppConfiguration
+service-name: AppConfiguration
 powershell: true
 clear-output-folder: true
 output-folder: AppConfiguration
