@@ -1,7 +1,7 @@
-# AppConfiguration Module
+# Az.AppConfiguration Module
 > See https://aka.ms/autorest
 
-This is the AutoRest configuration and documentation file for AppConfiguration PowerShell module.
+This is the AutoRest configuration and documentation file for Az.AppConfiguration PowerShell module.
 
 ---
 ## Requirements to build the module
@@ -30,32 +30,31 @@ To compile and run the module, use:
 Creating isolated process...
 Cleaning build folders...
 Compiling module...
-Module DLL Loaded [C:\..\AppConfiguration\bin\AppConfiguration.private.dll]
-Custom PSM1 Loaded [C:\..\AppConfiguration\custom\AppConfiguration.custom.psm1]
+Module DLL Loaded [C:\..\AppConfiguration\bin\Az.AppConfiguration.private.dll]
+Custom PSM1 Loaded [C:\..\AppConfiguration\custom\Az.AppConfiguration.custom.psm1]
 -------------Done-------------
 Creating isolated process...
 Loaded Module 'Az.Accounts'
-Loaded Module 'AppConfiguration'
-PS C:\...\AppConfiguration [AppConfiguration]>
+Loaded Module 'Az.AppConfiguration'
+PS C:\...\AppConfiguration [Az.AppConfiguration]>
 ```
 
 To examine the cmdlets, use:
-> `Get-Command -Module AppConfiguration`
+> `Get-Command -Module Az.AppConfiguration`
 
 ``` text
 CommandType     Name                                               Version    Source
 -----------     ----                                               -------    ------
-Function        Get-AzConfigurationStore                           1.0        AppConfiguration
-Function        Get-AzConfigurationStoreKey                        1.0        AppConfiguration
-Function        New-AzConfigurationStore                           1.0        AppConfiguration
-Function        New-AzConfigurationStoreKey                        1.0        AppConfiguration
-Function        Remove-AzConfigurationStore                        1.0        AppConfiguration
-Function        Test-AzConfigurationStoreNameAvailability          1.0        AppConfiguration
-Function        Update-AzConfigurationStore                        1.0        AppConfiguration
+Function        Get-AzAppConfigurationStore                        1.0        Az.AppConfiguration
+Function        Get-AzAppConfigurationStoreKey                     1.0        Az.AppConfiguration
+Function        New-AzAppConfigurationStore                        1.0        Az.AppConfiguration
+Function        New-AzAppConfigurationStoreKey                     1.0        Az.AppConfiguration
+Function        Remove-AzAppConfigurationStore                     1.0        Az.AppConfiguration
+Function        Test-AzAppConfigurationStoreNameAvailability       1.0        Az.AppConfiguration
 ```
 
 Running a cmdlet:
-> `Get-AzConfigurationStore`
+> `Get-AzAppConfigurationStore`
 
 ``` text
 Name          Type                                           Id
@@ -65,8 +64,7 @@ elkconfigtest Microsoft.AppConfiguration/configurationStores /subscriptions/9e22
 ---
 ## Notes about authentication
 AutoRest doesn't add authentication code into the generated client. This is handled in Az.Accounts.
-
-This sample includes an [extension](./AppConfiguration/generated/Module.cs) to the module that alters the HTTP payload before it is sent.
+The module class alters the HTTP payload before it is sent.
 
 ### AutoRest Configuration Information
 These are the settings for generating the cmdlets for an API with AutoRest.
@@ -89,7 +87,7 @@ directive:
   # - hide-command: Update-AzAppConfigurationStore
   - hide-command: Update-AzConfigurationStore
   - where-parameter: ConfigStoreName
-    set-name:  Name
+    set-name: Name
 ```
 
 # PowerShell
