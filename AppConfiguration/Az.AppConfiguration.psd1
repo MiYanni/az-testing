@@ -1,6 +1,5 @@
 @{
 
-
 # region definition
   RootModule = './Az.AppConfiguration.psm1'
   ModuleVersion = '1.0.0'
@@ -26,6 +25,5 @@
     }
   }
 # endregion
-
 
 }
