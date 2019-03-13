@@ -45,12 +45,12 @@ To examine the cmdlets, use:
 ``` text
 CommandType     Name                                               Version    Source
 -----------     ----                                               -------    ------
-Function        Get-AzAppConfigurationStore                        1.0        Az.AppConfiguration
-Function        Get-AzAppConfigurationStoreKey                     1.0        Az.AppConfiguration
-Function        New-AzAppConfigurationStore                        1.0        Az.AppConfiguration
-Function        New-AzAppConfigurationStoreKey                     1.0        Az.AppConfiguration
-Function        Remove-AzAppConfigurationStore                     1.0        Az.AppConfiguration
-Function        Test-AzAppConfigurationStoreNameAvailability       1.0        Az.AppConfiguration
+Function        Get-AzAppConfigurationStore                        0.1.0      Az.AppConfiguration
+Function        Get-AzAppConfigurationStoreKey                     0.1.0      Az.AppConfiguration
+Function        New-AzAppConfigurationStore                        0.1.0      Az.AppConfiguration
+Function        New-AzAppConfigurationStoreKey                     0.1.0      Az.AppConfiguration
+Function        Remove-AzAppConfigurationStore                     0.1.0      Az.AppConfiguration
+Function        Test-AzAppConfigurationStoreNameAvailability       0.1.0      Az.AppConfiguration
 ```
 
 Running a cmdlet:
@@ -73,20 +73,72 @@ These are the settings for generating the cmdlets for an API with AutoRest.
 input-file: AppConfiguration.json
 namespace: Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration
 service-name: AppConfiguration
-powershell: true
-clear-output-folder: true
-output-folder: AppConfiguration
 azure: true
+powershell: true
+output-folder: AppConfiguration
+clear-output-folder: true
+module-version: 0.1.0
 skip-model-cmdlets: true
 
 directive:
-  - where-command: (.*)(AzConfiguration)(.*)
-    set-name: $1AzAppConfiguration$3
-  - hide-command: Get-AzOperation
-  # - hide-command: Update-AzAppConfigurationStore
-  - hide-command: Update-AzConfigurationStore
-  - where-parameter: ConfigStoreName
-    set-name: Name
+  - where:
+      noun: ^Configuration(.*)
+    set:
+      noun: AppConfiguration$1
+  - where:
+      parameter-name: ConfigStoreName
+    set:
+      parameter-name: Name
+  - where:
+      noun: Operation
+    set:
+      hidden: true
+  - where:
+      verb: Update
+      noun: AppConfigurationStore
+    set:
+      hidden: true
+  - where:
+      verb: Get
+      variant: (.*)SkipToken$
+    set:
+      hidden: true
+  - where:
+      verb: New
+      noun: AppConfigurationStore
+      variant: ResourceGroupNameConfigStoreNameLocationTagsProperties
+    set:
+      hidden: true
+  - where:
+      verb: New
+      noun: AppConfigurationStore
+      variant: SubscriptionIdResourceGroupNameConfigStoreNameLocationTagsProperties
+    set:
+      hidden: true
+  - where:
+      verb: New
+      noun: AppConfigurationStoreKey
+      variant: KeyResourceGroupNameConfigStoreNameId
+    set:
+      hidden: true
+  - where:
+      verb: New
+      noun: AppConfigurationStoreKey
+      variant: KeySubscriptionIdResourceGroupNameConfigStoreNameId
+    set:
+      hidden: true
+  - where:
+      verb: Test
+      noun: AppConfigurationStoreNameAvailability
+      variant: NameAvailabilityNameType
+    set:
+      hidden: true
+  - where:
+      verb: Test
+      noun: AppConfigurationStoreNameAvailability
+      variant: NameAvailabilitySubscriptionIdNameType
+    set:
+      hidden: true
 ```
 
 # PowerShell
