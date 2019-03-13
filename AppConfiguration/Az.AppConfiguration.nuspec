@@ -17,13 +17,14 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="./Az.AppConfiguration.format.ps1xml" />
-    <file src="./Az.AppConfiguration.psd1" />
-    <file src="./Az.AppConfiguration.psm1" />
-    <file src="./bin/Az.AppConfiguration.private.dll" />
-    <file src="./bin/Az.AppConfiguration.private.deps.json" />
-    <file src="./custom/**/*.*" exclude="./custom/readme.md;./custom/**/*.cs" />
-    <file src="./docs/**/*.md" exclude="./docs/readme.md" />
-    <file src="./exports/**/*.ps1" />
+    <file src="Az.AppConfiguration.format.ps1xml" />
+    <file src="Az.AppConfiguration.psd1" />
+    <file src="Az.AppConfiguration.psm1" />
+    <!-- https://github.com/NuGet/Home/issues/3584 -->
+    <file src="bin/Az.AppConfiguration.private.dll" target="bin" />
+    <file src="bin/Az.AppConfiguration.private.deps.json" target="bin" />
+    <file src="custom/**/*.*" exclude="custom/readme.md;custom/**/*.cs" />
+    <file src="docs/**/*.md" exclude="docs/readme.md" />
+    <file src="exports/**/*.ps1" />
   </files>
 </package>
