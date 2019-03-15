@@ -3,7 +3,7 @@
   $instance = [Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Module]::Instance
 
   # Load the custom script module
-  $scriptModulePath = Join-Path $PSScriptRoot 'custom/Az.AppConfiguration.custom.psm1'
+  $scriptModulePath = Join-Path $PSScriptRoot './custom/Az.AppConfiguration.custom.psm1'
   if(Test-Path $scriptModulePath) {
     $null = Import-Module -Name $scriptModulePath
   }

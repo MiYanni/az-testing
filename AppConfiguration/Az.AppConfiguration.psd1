@@ -25,4 +25,8 @@
   }
 # endregion
 
+# region exports
+  CmdletsToExport = 'Get-AzAppConfigurationStore', 'Get-AzAppConfigurationStoreKey', 'New-AzAppConfigurationStore', 'New-AzAppConfigurationStoreKey', 'Remove-AzAppConfigurationStore', 'Test-AzAppConfigurationStoreNameAvailability', '*'
+# endregion
+
 }
