@@ -1,5 +1,5 @@
 # Az.AppConfiguration Module
-> See https://aka.ms/autorest
+> see https://aka.ms/autorest
 
 This is the AutoRest configuration and documentation file for Az.AppConfiguration PowerShell module.
 
@@ -72,19 +72,14 @@ These are the settings for generating the cmdlets for an API with AutoRest.
 ``` yaml
 input-file: AppConfiguration.json
 namespace: Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration
-service-name: AppConfiguration
 azure: true
 powershell: true
 output-folder: AppConfiguration
 clear-output-folder: true
-module-version: 0.1.0
+module-version: 0.1.1
 skip-model-cmdlets: true
 
 directive:
-  - where:
-      noun: ^Configuration(.*)
-    set:
-      noun: AppConfiguration$1
   - where:
       parameter-name: ConfigStoreName
     set:
@@ -95,7 +90,7 @@ directive:
       hidden: true
   - where:
       verb: Update
-      noun: AppConfigurationStore
+      noun: ConfigurationStore
     set:
       hidden: true
   - where:
@@ -105,37 +100,37 @@ directive:
       hidden: true
   - where:
       verb: New
-      noun: AppConfigurationStore
+      noun: ConfigurationStore
       variant: ResourceGroupNameConfigStoreNameLocationTagsProperties
     set:
       hidden: true
   - where:
       verb: New
-      noun: AppConfigurationStore
+      noun: ConfigurationStore
       variant: SubscriptionIdResourceGroupNameConfigStoreNameLocationTagsProperties
     set:
       hidden: true
   - where:
       verb: New
-      noun: AppConfigurationStoreKey
+      noun: ConfigurationStoreKey
       variant: KeyResourceGroupNameConfigStoreNameId
     set:
       hidden: true
   - where:
       verb: New
-      noun: AppConfigurationStoreKey
+      noun: ConfigurationStoreKey
       variant: KeySubscriptionIdResourceGroupNameConfigStoreNameId
     set:
       hidden: true
   - where:
       verb: Test
-      noun: AppConfigurationStoreNameAvailability
+      noun: ConfigurationStoreNameAvailability
       variant: NameAvailabilityNameType
     set:
       hidden: true
   - where:
       verb: Test
-      noun: AppConfigurationStoreNameAvailability
+      noun: ConfigurationStoreNameAvailability
       variant: NameAvailabilitySubscriptionIdNameType
     set:
       hidden: true

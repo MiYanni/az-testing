@@ -1,4 +1,4 @@
-param([Switch]$Isolated, [Switch]$Code)
+param([switch]$Isolated, [switch]$Code)
 $ErrorActionPreference = 'Stop'
 
 if(-not $Isolated) {
@@ -8,7 +8,17 @@ if(-not $Isolated) {
   return
 }
 
-$modulePsd1 = Get-Item -Path (Join-Path $PSScriptRoot '*.psd1') | Select-Object -First 1
+$isAzure = $true
+if($isAzure) {
+  . (Join-Path $PSScriptRoot 'check-dependencies.ps1') -Isolated -Accounts
+}
+
+$localModulesPath = Join-Path $PSScriptRoot 'generated\modules'
+if(Test-Path -Path $localModulesPath) {
+  $env:PSModulePath = "$localModulesPath$([IO.Path]::PathSeparator)$env:PSModulePath"
+}
+
+$modulePsd1 = Get-Item -Path (Join-Path $PSScriptRoot './Az.AppConfiguration.psd1')
 $modulePath = $modulePsd1.FullName
 $moduleName = $modulePsd1.BaseName
 

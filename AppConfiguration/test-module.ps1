@@ -1,10 +1,5 @@
-param([Switch]$Isolated)
+param([switch]$Isolated)
 $ErrorActionPreference = 'Stop'
-
-$pester = Get-Module -ListAvailable -Name Pester
-if (-not $pester) {
-  Write-Error 'Pester is required to run tests. Please run ''Install-Module -Name Pester'' to install Pester.'
-}
 
 if(-not $Isolated) {
   Write-Host -ForegroundColor Green 'Creating isolated process...'
@@ -13,12 +8,19 @@ if(-not $Isolated) {
   return
 }
 
-$modulePsd1 = Get-Item -Path (Join-Path $PSScriptRoot '*.psd1') | Select-Object -First 1
+. (Join-Path $PSScriptRoot 'check-dependencies.ps1') -Isolated -Accounts:$true -Pester
+
+$localModulesPath = Join-Path $PSScriptRoot 'generated\modules'
+if(Test-Path -Path $localModulesPath) {
+  $env:PSModulePath = "$localModulesPath$([IO.Path]::PathSeparator)$env:PSModulePath"
+}
+
+$modulePsd1 = Get-Item -Path (Join-Path $PSScriptRoot './Az.AppConfiguration.psd1')
 $modulePath = $modulePsd1.FullName
 $moduleName = $modulePsd1.BaseName
 
 Import-Module -Name Pester
-Import-Module $modulePath
+Import-Module -Name $modulePath
 
 $testFolder = Join-Path $PSScriptRoot 'test'
 Invoke-Pester -Script @{ Path = $testFolder } -EnableExit -OutputFile (Join-Path $testFolder "$moduleName-TestResults.xml")
