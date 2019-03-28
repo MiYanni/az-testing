@@ -76,7 +76,7 @@ azure: true
 powershell: true
 output-folder: AppConfiguration
 clear-output-folder: true
-module-version: 0.1.1
+module-version: 0.1.2
 skip-model-cmdlets: true
 
 directive:
