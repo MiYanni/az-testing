@@ -85,12 +85,12 @@ directive:
     set:
       parameter-name: Name
   - where:
-      noun: Operation
+      subject: Operation
     set:
       hidden: true
   - where:
       verb: Update
-      noun: ConfigurationStore
+      subject: ConfigurationStore
     set:
       hidden: true
   - where:
@@ -100,37 +100,37 @@ directive:
       hidden: true
   - where:
       verb: New
-      noun: ConfigurationStore
+      subject: ConfigurationStore
       variant: ResourceGroupNameConfigStoreNameLocationTagsProperties
     set:
       hidden: true
   - where:
       verb: New
-      noun: ConfigurationStore
+      subject: ConfigurationStore
       variant: SubscriptionIdResourceGroupNameConfigStoreNameLocationTagsProperties
     set:
       hidden: true
   - where:
       verb: New
-      noun: ConfigurationStoreKey
+      subject: ConfigurationStoreKey
       variant: KeyResourceGroupNameConfigStoreNameId
     set:
       hidden: true
   - where:
       verb: New
-      noun: ConfigurationStoreKey
+      subject: ConfigurationStoreKey
       variant: KeySubscriptionIdResourceGroupNameConfigStoreNameId
     set:
       hidden: true
   - where:
       verb: Test
-      noun: ConfigurationStoreNameAvailability
+      subject: ConfigurationStoreNameAvailability
       variant: NameAvailabilityNameType
     set:
       hidden: true
   - where:
       verb: Test
-      noun: ConfigurationStoreNameAvailability
+      subject: ConfigurationStoreNameAvailability
       variant: NameAvailabilitySubscriptionIdNameType
     set:
       hidden: true

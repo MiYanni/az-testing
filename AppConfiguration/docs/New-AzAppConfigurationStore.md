@@ -15,13 +15,14 @@ Creates a configuration store with the specified parameters.
 ### ResourceGroupNameConfigStoreNameLocationTagsPropertiesExpanded (Default)
 ```
 New-AzAppConfigurationStore [-AsJob] [-DefaultProfile <PSObject>] -Location <String> -Name <String>
- -ResourceGroupName <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+ -ResourceGroupName <String> [-Tag <Hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SubscriptionIdResourceGroupNameConfigStoreNameLocationTagsPropertiesEtc
 ```
 New-AzAppConfigurationStore [-AsJob] [-DefaultProfile <PSObject>] -Location <String> -Name <String>
- -ResourceGroupName <String> -SubscriptionId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+ -ResourceGroupName <String> [-Tag <Hashtable>] -SubscriptionId <String> [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -123,6 +124,21 @@ Parameter Sets: SubscriptionIdResourceGroupNameConfigStoreNameLocationTagsProper
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tag
+The tags of the resource.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
