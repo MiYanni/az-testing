@@ -70,12 +70,9 @@ The module class alters the HTTP payload before it is sent.
 These are the settings for generating the cmdlets for an API with AutoRest.
 
 ``` yaml
+require: readme.azure.md
 input-file: AppConfiguration.json
-namespace: Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration
-azure: true
-powershell: true
-output-folder: AppConfiguration
-clear-output-folder: true
+service-name: AppConfiguration
 module-version: 0.1.2
 skip-model-cmdlets: true
 
@@ -84,10 +81,6 @@ directive:
       parameter-name: ConfigStoreName
     set:
       parameter-name: Name
-  - where:
-      subject: Operation
-    set:
-      hidden: true
   - where:
       verb: Update
       subject: ConfigurationStore
